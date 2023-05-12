@@ -1,0 +1,4 @@
+{
+    "peacock.remoteColor": "#42b883",
+    "typescript.tsdk": "node_modules/typescript/lib"
+}

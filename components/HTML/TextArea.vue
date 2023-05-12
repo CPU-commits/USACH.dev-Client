@@ -1,0 +1,23 @@
+<template>
+	<textarea></textarea>
+</template>
+
+<style lang="scss" scoped>
+textarea {
+	background-color: var(--color-bg);
+	border: none;
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	transition: all 0.2s ease;
+	resize: none;
+}
+
+textarea:focus {
+	outline: none;
+	-webkit-box-shadow: 0.5px 1.5px 0 1.5px #000000;
+	-moz-box-shadow: 0.5px 1.5px 0 1.5px #000000;
+	box-shadow: 0.5px 1.5px 0 1.5px #000000;
+}
+</style>
