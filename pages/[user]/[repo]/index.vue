@@ -159,9 +159,10 @@ async function deleteLink(idLink: string) {
 <template>
 	<HTMLContainer class="Repository" orientation="V" :gap="10">
 		<RepoNav
+			v-if="repository"
 			:is-owner="isOwner"
-			:owner="repository?.owner.username ?? ''"
-			:repo-name="repository?.name ?? ''"
+			:owner="repository.owner.username"
+			:repo-name="repository.name"
 		/>
 		<div v-if="repository" class="Repository__body">
 			<section class="Repository__body--content">

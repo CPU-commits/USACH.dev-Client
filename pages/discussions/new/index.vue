@@ -20,6 +20,7 @@ const discussion = ref({
 	text: '',
 	repository: '',
 	image: '/img/img.svg',
+	snippet: '',
 })
 const inputFile = ref<HTMLInputElement | null>(null)
 const editor = ref<Editor | null>(null)
@@ -110,6 +111,11 @@ async function uploadDiscussion() {
 					&lt;{{ repository.stars }} Estrellas>
 				</option>
 			</HTMLSelect>
+			<HTMLInput
+				v-model:value="discussion.snippet"
+				label-text="Fragmento"
+				placeholder="¿De qué va a tratar?..."
+			/>
 			<HTMLRich @build-editor="(e) => (editor = e)" />
 			<HTMLButton type="submit"> Subir discuci&oacute;n </HTMLButton>
 		</HTMLForm>

@@ -4,6 +4,7 @@ defineProps<{
 	value: string
 	type?: string
 	field?: string
+	placeholder?: string
 }>()
 
 defineEmits<{
@@ -18,6 +19,7 @@ defineEmits<{
 			:value="value"
 			class="input__field"
 			:type="type ? type : 'text'"
+			:placeholder="placeholder"
 			@input="$event =>
 				$emit('update:value', ($event.target as HTMLInputElement).value)
 			"

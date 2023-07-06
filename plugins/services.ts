@@ -1,4 +1,5 @@
 // Services
+import { CommentService } from '~~/services/comment.service'
 import { Fetch } from '~~/common/fetchModule'
 import { AuthService } from '~~/services/auth.service'
 import { DiscussionService } from '~~/services/discussion.service'
@@ -16,6 +17,7 @@ export default defineNuxtPlugin(() => {
 			userService: new UserService(fetchModule),
 			repoService: new RepoSerivce(fetchModule, fileService),
 			discussionService: new DiscussionService(fetchModule),
+			commentService: new CommentService(fetchModule),
 		},
 	}
 })

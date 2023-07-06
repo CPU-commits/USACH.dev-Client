@@ -21,7 +21,7 @@ onMounted(async () => {
 	try {
 		// Fetch data
 		const data = await Promise.all([
-			$userService.getUser(username ?? ''),
+			$userService.getUser(username ?? '', true),
 			$repoService.getUserRepos(username ?? ''),
 		])
 		user.value = data[0]
@@ -42,15 +42,41 @@ onMounted(async () => {
 		<div class="User__profile">
 			<header>
 				<UserAvatar
-					:src="user.profile ? user.profile.avatar : 'default'"
+					:src="
+						user?.profile?.avatar
+							? $userService.getAvatar(user.username)
+							: 'default'
+					"
+					:editable="true"
+					@image="
+						(image) =>
+							$userService.updateProfile({
+								avatar: image,
+							})
+					"
 				/>
 				<div>
 					<h3>{{ user.full_name }}</h3>
 					<h4>@{{ user.username }}</h4>
 				</div>
 			</header>
-			<p v-if="user.profile">{{ user.profile?.description }}</p>
-			<p v-else>No hay descripci&oacute;n</p>
+			<p>
+				<HTMLTextArea
+					:input-style="false"
+					:value="
+						user?.profile
+							? user.profile.description
+							: 'No hay descripción'
+					"
+					:action-after="{
+						action: (text) =>
+							$userService.updateProfile({
+								description: text,
+							}),
+						timeInSeconds: 0.5,
+					}"
+				/>
+			</p>
 		</div>
 		<div class="User__repositories">
 			<header>

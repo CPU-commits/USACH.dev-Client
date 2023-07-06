@@ -15,25 +15,11 @@
 		<section class="Main__know">
 			<h3>¿Qu&eacute; es USACH.dev?</h3>
 			<section class="Main__know--content">
-				<Console label="README.md" :lang="'markdown'">
-					<div class="Console__line">
-						<span>1.</span>
-						<h1 class="Console__hightlight">
-							# ¡Hagamos un buen apunte!
-						</h1>
-					</div>
-					<div class="Console__line">
-						<span>2. </span>
-						<h2 class="Console__hightlight">## Contenido</h2>
-					</div>
-					<div class="Console__line">
-						<span>3.</span>
-						<p>El mejor código es el inteligente</p>
-					</div>
-					<div class="Console__line">
-						<span>4.</span>
-						<p>[Link de Drive acá](https://drive.com)</p>
-					</div>
+				<Console label="⚗️ /USACH.dev/calculo-1" :lang="'Repositorio'">
+					<h2 class="Console__title">
+						UnGranRepositorio - Tú &lt;tu-user>
+					</h2>
+					<img src="/img/404.svg" alt="Contenido" />
 				</Console>
 				<article class="Main__content--text">
 					<p>
@@ -109,5 +95,15 @@
 			text-align: center;
 		}
 	}
+}
+
+.Console__title {
+	font-size: 1rem;
+	text-align: center;
+}
+
+img {
+	width: 100%;
+	max-width: 300px;
 }
 </style>

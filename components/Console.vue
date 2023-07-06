@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-	lang: 'markdown'
+	lang: string
 	label: string
 }>()
 </script>

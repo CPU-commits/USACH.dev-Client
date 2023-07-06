@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 withDefaults(
 	defineProps<{
-		orientation: 'H' | 'V'
+		orientation?: 'H' | 'V'
 		gap?: number
 	}>(),
 	{ orientation: 'H', gap: 20 },

@@ -5,6 +5,7 @@ export default defineNuxtConfig({
 	runtimeConfig: {
 		public: {
 			API: 'http://localhost:8080',
+			WS: 'ws://localhost:5000',
 		},
 	},
 	typescript: {
@@ -21,6 +22,10 @@ export default defineNuxtConfig({
 	session: {
 		session: {
 			expiryInSeconds: 60 * 60 * 8,
+		},
+		api: {
+			isEnabled: true,
+			methods: ['patch', 'get', 'post', 'delete'],
 		},
 	},
 	imports: {

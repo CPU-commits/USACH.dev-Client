@@ -12,7 +12,7 @@ defineProps<{
 			<NuxtLink :to="`/${owner}/${repoName}`">
 				<li><i class="fa-solid fa-boxes-packing"></i> Repositorio</li>
 			</NuxtLink>
-			<NuxtLink>
+			<NuxtLink :to="`/${owner}/${repoName}/discussions`">
 				<li><i class="fa-solid fa-comments"></i> Discusiones</li>
 			</NuxtLink>
 			<NuxtLink

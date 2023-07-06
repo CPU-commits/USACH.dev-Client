@@ -6,14 +6,15 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-	"pretty": "prettier --write \"./**/*.{js,jsx,json,vue,ts}\"",
-	"lint": "eslint . --ext .ts --ext .vue --fix"
+    "pretty": "prettier --write \"./**/*.{js,jsx,json,vue,ts}\"",
+    "lint": "eslint . --ext .ts --ext .vue --fix"
   },
   "devDependencies": {
     "@nozomuikuta/h3-cors": "^0.2.0",
     "@nuxt/image-edge": "^1.0.0-27913696.5d122a3",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@sidebase/nuxt-session": "^0.2.7",
+    "@types/node": "^20.3.3",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "@vue/eslint-config-standard": "^8.0.1",
@@ -57,7 +58,9 @@
     "lowlight": "^2.8.1",
     "nuxt-security": "^0.10.1",
     "pinia": "^2.0.29",
+    "socket.io-client": "^4.7.1",
     "vue": "^3.2.45",
+    "vue3-emoji-picker": "^1.1.7",
     "zod": "^3.20.6"
   }
 }
