@@ -19,9 +19,17 @@ onMounted(() => {
 				<h1>🦁 USACH.dev</h1>
 			</NuxtLink>
 			<nav class="Header__nav">
-				<NuxtLink to="/repositories"> Repositorios </NuxtLink>
-				<NuxtLink to="/discussions"> Discusiones </NuxtLink>
-				<NuxtLink to="/repositories"> Uso </NuxtLink>
+				<NuxtLink to="/repositories">
+					<span>Repositorios</span>
+					<i class="fa-solid fa-boxes-stacked"></i>
+				</NuxtLink>
+				<NuxtLink to="/discussions">
+					<span>Discusiones</span>
+					<i class="fa-solid fa-users-between-lines"></i>
+				</NuxtLink>
+				<NuxtLink to="/repositories">
+					<span>Uso</span>
+				</NuxtLink>
 			</nav>
 		</div>
 		<div class="Header__user">
@@ -66,6 +74,14 @@ onMounted(() => {
 			color: var(--color-text);
 		}
 	}
+	.Header__nav {
+		a {
+			i,
+			span {
+				color: var(--color-bg);
+			}
+		}
+	}
 	.Impact {
 		i {
 			color: var(--color-text);
@@ -93,6 +109,13 @@ onMounted(() => {
 		text-decoration: none;
 		transition: all 0.4s ease;
 		font-weight: bold;
+		i {
+			color: white;
+			display: none;
+		}
+		span {
+			color: white;
+		}
 	}
 	a:hover {
 		color: var(--color-main);
@@ -116,5 +139,46 @@ onMounted(() => {
 
 .Impact:hover i {
 	transform: rotate(10deg) scale(1.2);
+}
+
+@media (max-width: 767.98px) {
+	a {
+		font-size: 0.9rem;
+	}
+
+	.Header__nav {
+		gap: 30px;
+	}
+
+	.Header__logo {
+		h1 {
+			font-size: 1.3rem;
+		}
+	}
+}
+
+@media (max-width: 575.98px) {
+	a {
+		font-size: 0.8rem;
+	}
+
+	.Header__nav {
+		gap: 20px;
+		span {
+			display: none;
+		}
+		a {
+			i {
+				display: block;
+				font-size: 1rem;
+			}
+		}
+	}
+
+	.Header__logo {
+		h1 {
+			font-size: 1.2rem;
+		}
+	}
 }
 </style>

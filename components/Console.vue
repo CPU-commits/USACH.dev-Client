@@ -103,4 +103,10 @@ defineProps<{
 		font-weight: bold;
 	}
 }
+
+@media (max-width: 767.98px) {
+	.Console__footer span {
+		font-size: 0.9rem;
+	}
+}
 </style>

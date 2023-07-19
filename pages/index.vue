@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
 	<main class="Main">
 		<section class="Main__banner">
@@ -34,7 +32,7 @@
 					</p>
 					<p>
 						<i class="fa-solid fa-book-skull"></i> A los -5 puntos
-						es GAME OVER.
+						<strong>SE ACABA</strong> tu repositorio
 					</p>
 					<p>
 						<i class="fa-solid fa-star Console__hightlight"></i>
@@ -42,8 +40,9 @@
 						puntos.
 					</p>
 					<p>
-						<i class="fa-solid fa-file-lines"></i> Basada en
-						documentos.
+						<i class="fa-solid fa-network-wired"></i> Genera
+						comunidad a partir de discusiones de repositorios o
+						generales.
 					</p>
 				</article>
 			</section>
@@ -82,6 +81,7 @@
 	h3 {
 		font-size: 1.5rem;
 	}
+	margin-bottom: 150px;
 	.Main__know--content {
 		display: flex;
 		justify-content: space-evenly;
@@ -105,5 +105,40 @@
 img {
 	width: 100%;
 	max-width: 300px;
+}
+
+@media (max-width: 767.98px) {
+	.Main__banner {
+		h2 {
+			font-size: 1.7rem;
+		}
+		h4 {
+			font-size: 0.9rem;
+		}
+	}
+
+	.Main__know {
+		h3 {
+			font-size: 1.3rem;
+		}
+		p {
+			font-size: 0.9rem;
+		}
+	}
+
+	.Console__title {
+		font-size: 0.9rem;
+	}
+}
+
+@media (max-width: 575.98px) {
+	.Main__banner {
+		flex-direction: column;
+		padding: 30px;
+	}
+
+	.Main__know--content {
+		flex-direction: column;
+	}
 }
 </style>
