@@ -90,7 +90,7 @@ async function uploadDiscussion() {
 			/>
 			<span>Imagen (Opcional)</span>
 			<div class="Image">
-				<NuxtImg
+				<img
 					:src="discussion.image"
 					alt="Nueva imagen"
 					@click="() => inputFile?.click()"

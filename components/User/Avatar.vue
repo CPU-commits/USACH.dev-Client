@@ -39,7 +39,7 @@ function changeImage() {
 
 <template>
 	<div>
-		<NuxtImg
+		<img
 			:class="{
 				NormalSize: size === 'normal' || !size,
 				SmallSize: size && size === 'small',

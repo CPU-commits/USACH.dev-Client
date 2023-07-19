@@ -103,7 +103,7 @@ onMounted(async () => {
 				v-else-if="repositories?.length === 0"
 				class="User__repositories--404"
 			>
-				<NuxtImg
+				<img
 					class="User__repositories--notfound"
 					src="/img/repo.svg"
 				/>

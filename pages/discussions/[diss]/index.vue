@@ -43,7 +43,7 @@ function addReaction(reaction: string) {
 		<section v-if="discussion && reactions" class="Discussion">
 			<h1>{{ discussion.title }}</h1>
 			<figure>
-				<NuxtImg v-if="discussion.image" :src="image" />
+				<img v-if="discussion.image" :src="image" />
 				<figcaption>
 					<small>
 						{{ formatDate(discussion.created_at) }}

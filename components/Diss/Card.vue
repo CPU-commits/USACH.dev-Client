@@ -76,7 +76,7 @@ function addReaction(reaction: string) {
 				/>
 			</footer>
 		</div>
-		<NuxtImg v-if="discussion.image" :src="image" :alt="discussion.title" />
+		<img v-if="discussion.image" :src="image" :alt="discussion.title" />
 	</article>
 </template>
 
