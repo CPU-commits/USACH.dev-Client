@@ -103,10 +103,7 @@ onMounted(async () => {
 				v-else-if="repositories?.length === 0"
 				class="User__repositories--404"
 			>
-				<img
-					class="User__repositories--notfound"
-					src="/img/repo.svg"
-				/>
+				<img class="User__repositories--notfound" src="/img/repo.svg" />
 				<span>
 					Todav&iacute;a no ha publicado repositorios este usuario
 				</span>
