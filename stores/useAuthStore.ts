@@ -74,11 +74,12 @@ const useAuthStore = defineStore('auth', {
 			this.user = user
 		},
 		async setSession(auth: Auth) {
-			const { refresh, update } = await useSession()
+			const { refresh, overwrite } = await useSession()
 			await refresh()
-			await update({
+			await overwrite({
 				auth,
 			})
+			console.log(auth)
 		},
 		userTypeNotIs(...userTypes: KeysUserTypes[]) {
 			return !userTypes.includes(this.getUserType as never)

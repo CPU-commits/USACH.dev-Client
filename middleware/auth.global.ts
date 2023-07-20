@@ -1,3 +1,5 @@
+import { Auth } from 'models/auth/auth.model'
+
 export default defineNuxtRouteMiddleware(async (_to, from) => {
 	if (useError().value) {
 		return
@@ -5,12 +7,12 @@ export default defineNuxtRouteMiddleware(async (_to, from) => {
 	if (process.client) {
 		let isAuth = true
 		if (!useAuthStore().isAuth) {
-			const { session } = await useSession()
-			if (session.value?.auth) {
+			const { session } = await useSession<{ auth?: Auth }>()
+			if (session.value?.data?.auth) {
 				useAuthStore().setAuth({
-					token: session.value.auth.token,
-					refresh_token: session.value.auth.refresh_token,
-					user: session.value.auth.user,
+					token: session.value.data.auth.token,
+					refresh_token: session.value.data.auth.refresh_token,
+					user: session.value.data.auth.user,
 				})
 			} else isAuth = false
 		}

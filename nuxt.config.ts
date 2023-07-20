@@ -7,27 +7,23 @@ export default defineNuxtConfig({
 			API: 'http://localhost:8080',
 			WS: 'ws://localhost:5000',
 		},
+		cookies: {
+			CRYPTO_KEY: 'E(H+MbQeThWmZq3t6w9z$C&F)J@NcRfU',
+			EXPIRY_IN_SECONDS: 3600,
+		},
+		redis: {
+			user: '',
+			host: '',
+			port: 0,
+			password: '',
+		},
 	},
 	typescript: {
 		strict: true,
 		typeCheck: true,
 	},
 	css: ['@/assets/scss/main.scss'],
-	modules: [
-		'@nuxt/image-edge',
-		'@pinia/nuxt',
-		'nuxt-security',
-		'@sidebase/nuxt-session',
-	],
-	session: {
-		session: {
-			expiryInSeconds: 60 * 60 * 8,
-		},
-		api: {
-			isEnabled: true,
-			methods: ['patch', 'get', 'post', 'delete'],
-		},
-	},
+	modules: ['@nuxt/image-edge', '@pinia/nuxt', 'nuxt-security'],
 	imports: {
 		dirs: ['stores'],
 	},
@@ -65,6 +61,14 @@ export default defineNuxtConfig({
 		allowedMethodsRestricter: {
 			value: ['GET', 'POST'],
 			route: '/**',
+		},
+	},
+	nitro: {
+		storage: {
+			db: {
+				driver: 'fs',
+				base: './data/db',
+			},
 		},
 	},
 })

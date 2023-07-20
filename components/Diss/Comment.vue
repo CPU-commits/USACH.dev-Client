@@ -73,7 +73,7 @@ function toggleReply() {
 	padding: 10px;
 }
 
-p {
+.DissCard__content p {
 	padding: 20px;
 }
 
