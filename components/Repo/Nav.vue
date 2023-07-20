@@ -10,16 +10,25 @@ defineProps<{
 	<nav>
 		<ul>
 			<NuxtLink :to="`/${owner}/${repoName}`">
-				<li><i class="fa-solid fa-boxes-packing"></i> Repositorio</li>
+				<li>
+					<i class="fa-solid fa-boxes-packing"></i>
+					<span>Repositorio</span>
+				</li>
 			</NuxtLink>
 			<NuxtLink :to="`/${owner}/${repoName}/discussions`">
-				<li><i class="fa-solid fa-comments"></i> Discusiones</li>
+				<li>
+					<i class="fa-solid fa-comments"></i>
+					<span>Discusiones</span>
+				</li>
 			</NuxtLink>
 			<NuxtLink
 				v-if="isOwner"
 				:to="`/${owner}/${repoName}/configuration`"
 			>
-				<li><i class="fa-solid fa-sliders"></i> Configuraciones</li>
+				<li>
+					<i class="fa-solid fa-sliders"></i>
+					<span>Configuraciones</span>
+				</li>
 			</NuxtLink>
 		</ul>
 	</nav>
@@ -44,5 +53,11 @@ li {
 
 a {
 	text-decoration: none;
+}
+
+@media (max-width: 575.98px) {
+	span {
+		display: none;
+	}
 }
 </style>

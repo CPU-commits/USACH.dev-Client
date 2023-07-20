@@ -107,4 +107,14 @@ p {
 .Selected {
 	color: var(--color-main);
 }
+
+@media (max-width: 575.98px) {
+	.Comment__content {
+		grid-template-columns: 50px 1fr;
+	}
+
+	.Timeline {
+		left: 25px;
+	}
+}
 </style>

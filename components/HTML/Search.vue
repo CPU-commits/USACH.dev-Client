@@ -37,6 +37,7 @@ function enter(key: string) {
 article {
 	display: flex;
 	gap: 5px;
+	width: 100%;
 }
 
 input {

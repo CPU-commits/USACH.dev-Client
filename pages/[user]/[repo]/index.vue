@@ -479,4 +479,11 @@ span {
 		border-radius: 3px;
 	}
 }
+
+@media (max-width: 767.98px) {
+	.Repository__body {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+}
 </style>

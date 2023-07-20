@@ -41,6 +41,9 @@ async function searchDiscussions(page: number, count = false) {
 				:search="() => searchDiscussions(0, true)"
 				placeholder="Busquemos una discusión"
 			/>
+			<HTMLAButton href="/discussions/new">
+				<i class="fa-solid fa-plus"></i>
+			</HTMLAButton>
 		</header>
 		<section class="Discussions">
 			<DissCussions v-if="discussions" :discussions="discussions" />
@@ -55,7 +58,15 @@ async function searchDiscussions(page: number, count = false) {
 	</HTMLContainer>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+.Search {
+	display: flex;
+	gap: 10px;
+	i {
+		color: var(--color-console);
+	}
+}
+
 .Discussions {
 	margin-top: 10px;
 	display: flex;

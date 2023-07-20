@@ -54,7 +54,7 @@ async function searchRepos(page: number, returnAll = false) {
 	</HTMLContainer>
 </template>
 
-<style scoped>
+<style>
 .Repositories {
 	margin-top: 10px;
 	display: flex;
@@ -63,5 +63,16 @@ async function searchRepos(page: number, returnAll = false) {
 	background-color: var(--color-console);
 	padding: 15px;
 	border-radius: 8px;
+}
+
+@media (max-width: 575.98px) {
+	.Repositories {
+		padding: 0;
+		background-color: transparent;
+	}
+
+	.Repositories button:disabled i {
+		color: var(--color-console) !important;
+	}
 }
 </style>

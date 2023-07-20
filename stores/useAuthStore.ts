@@ -79,7 +79,6 @@ const useAuthStore = defineStore('auth', {
 			await overwrite({
 				auth,
 			})
-			console.log(auth)
 		},
 		userTypeNotIs(...userTypes: KeysUserTypes[]) {
 			return !userTypes.includes(this.getUserType as never)

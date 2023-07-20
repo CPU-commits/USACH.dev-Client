@@ -94,4 +94,10 @@ h2 {
 	width: fit-content;
 	align-items: center;
 }
+
+@media (max-width: 575.98px) {
+	.NewRepo {
+		padding: 10px;
+	}
+}
 </style>

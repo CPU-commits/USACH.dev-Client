@@ -51,6 +51,7 @@ async function downloadFolder() {
 <template>
 	<HTMLContainer orientation="V" :gap="10">
 		<RepoNav
+			v-if="repository"
 			:is-owner="isOwner"
 			:repo-name="repository?.name ?? ''"
 			:owner="repository?.owner.username ?? ''"
@@ -81,7 +82,12 @@ async function downloadFolder() {
 				:repo-name="repository.name"
 				:folder="folder._id"
 				:system-file="folder?.childrens ?? []"
-				@new-element="(el) => folder?.childrens?.push(el)"
+				@new-element="
+					(el) =>
+						folder?.childrens
+							? folder?.childrens?.push(el)
+							: (folder as SystemFile).childrens = [el]
+				"
 				@delete-element="
 					(idEl) => {
 						if (folder?.childrens)

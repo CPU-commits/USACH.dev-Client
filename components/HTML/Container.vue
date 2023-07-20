@@ -38,4 +38,11 @@ withDefaults(
 	gap: --gap;
 	box-sizing: border-box;
 }
+
+@media (max-width: 767.98px) {
+	.Content {
+		flex-direction: column;
+		padding: 15px;
+	}
+}
 </style>

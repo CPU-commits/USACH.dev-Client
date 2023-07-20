@@ -1,8 +1,10 @@
 <script lang="ts" setup>
 // Types
 import type { SystemFile } from '~~/models/repository/system_file.model'
+// Router
+const route = useRoute()
 
-defineProps<{
+const props = defineProps<{
 	element: SystemFile
 	repoName: string
 	isOwner: boolean
@@ -12,10 +14,16 @@ defineEmits<{
 	(e: 'delete', v: string): void
 	(e: 'download', v: string): void
 }>()
+
+const path = computed(() => {
+	const cuted = route.fullPath.split('/')
+	cuted.length = 3
+	return `${cuted.join('/')}/${props.element._id}`
+})
 </script>
 
 <template>
-	<NuxtLink :to="element.is_directory ? `${repoName}/${element._id}` : ''">
+	<NuxtLink :to="element.is_directory ? path : ''">
 		<article class="Element">
 			<span>
 				<i v-if="element.is_directory" class="fa-solid fa-folder"></i>
@@ -62,6 +70,10 @@ span {
 	display: flex;
 	font-size: 0.9rem;
 	gap: 10px;
+	max-width: 600px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 button i {
@@ -70,5 +82,11 @@ button i {
 
 button .Delete:hover {
 	color: var(--color-danger);
+}
+
+@media (max-width: 575.98px) {
+	span {
+		max-width: 170px;
+	}
 }
 </style>

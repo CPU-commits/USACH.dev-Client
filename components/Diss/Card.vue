@@ -132,4 +132,15 @@ a {
 	align-items: center;
 	gap: 10px;
 }
+
+@media (max-width: 575.98px) {
+	.DissCard {
+		flex-direction: column-reverse;
+		padding: 0;
+	}
+
+	.DissCard__content {
+		padding: 10px;
+	}
+}
 </style>

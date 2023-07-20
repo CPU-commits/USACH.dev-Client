@@ -107,4 +107,10 @@ img {
 	display: flex;
 	justify-content: space-between;
 }
+
+@media (max-width: 575.98px) {
+	.Discussion {
+		padding: 10px;
+	}
+}
 </style>

@@ -170,4 +170,10 @@ i {
 	display: flex;
 	justify-content: space-between;
 }
+
+@media (max-width: 767.98px) {
+	.User__repositories--cards {
+		padding: 0;
+	}
+}
 </style>
