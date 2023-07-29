@@ -58,6 +58,7 @@ async function downloadRepo() {
 
 function toggleLike(isPlus: boolean) {
 	// Update stars
+	if (isPlus === like.value?.plus) return
 	if (repository.value && like.value)
 		repository.value.stars += isPlus ? 2 : -2
 	else if (repository.value) repository.value.stars += isPlus ? 1 : -1
