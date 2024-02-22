@@ -36,9 +36,7 @@ function onInput(text: string) {
 	<textarea
 		:class="{ Input: inputStyle, NotInput: !inputStyle }"
 		:placeholder="placeholder"
-		@input="$event =>
-				onInput(($event.target as HTMLInputElement).value)
-			"
+		@input="($event) => onInput(($event.target as HTMLInputElement).value)"
 	/>
 </template>
 

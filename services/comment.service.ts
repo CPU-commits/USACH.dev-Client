@@ -1,6 +1,6 @@
-import { DefaultResponse, Fetch } from 'common/fetchModule'
-import { BodyFetch } from 'models/body.model'
-import { Comment } from 'models/comments/comment.model'
+import type { DefaultResponse, Fetch } from '@/common/fetchModule'
+import type { BodyFetch } from '@/models/body.model'
+import type { Comment } from '@/models/comments/comment.model'
 
 export class CommentService {
 	private readonly fetch: Fetch

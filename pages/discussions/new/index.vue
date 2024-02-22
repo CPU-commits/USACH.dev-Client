@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { Editor } from '@tiptap/core'
-import { Repository } from '~~/models/repository/repo.model'
+import type { Repository } from '~~/models/repository/repo.model'
 
 definePageMeta({
 	auth: true,

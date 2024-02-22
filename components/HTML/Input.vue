@@ -20,8 +20,12 @@ defineEmits<{
 			class="input__field"
 			:type="type ? type : 'text'"
 			:placeholder="placeholder"
-			@input="$event =>
-				$emit('update:value', ($event.target as HTMLInputElement).value)
+			@input="
+				($event) =>
+					$emit(
+						'update:value',
+						($event.target as HTMLInputElement).value,
+					)
 			"
 		/>
 		<HTMLInputMessage v-if="field" :field="field" />

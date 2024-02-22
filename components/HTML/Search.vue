@@ -23,8 +23,12 @@ function enter(key: string) {
 			:placeholder="placeholder"
 			:value="value"
 			@keydown="($event) => enter($event.key)"
-			@input="$event =>
-				$emit('update:value', ($event.target as HTMLInputElement).value)
+			@input="
+				($event) =>
+					$emit(
+						'update:value',
+						($event.target as HTMLInputElement).value,
+					)
 			"
 		/>
 		<HTMLButton type="button" :click="search">

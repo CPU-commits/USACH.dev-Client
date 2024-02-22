@@ -1,4 +1,4 @@
-import { User } from 'models/user/user.model'
+import type { User } from '@/models/user/user.model'
 
 export type Comment = {
 	_id: string

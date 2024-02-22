@@ -1,7 +1,7 @@
 // Types
 import type { DefaultResponse, Fetch } from '~~/common/fetchModule'
-import { BodyFetch } from '~~/models/body.model'
-import { User } from '~~/models/user/user.model'
+import type { BodyFetch } from '~~/models/body.model'
+import type { User } from '~~/models/user/user.model'
 
 export class UserService {
 	private readonly fetch: Fetch

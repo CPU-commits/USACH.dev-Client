@@ -22,8 +22,12 @@ defineEmits<{
 				:value="input.value"
 				:name="name"
 				:checked="input.value === value"
-				@change="$event =>
-					$emit('update:value', ($event.target as HTMLInputElement).value)
+				@change="
+					($event) =>
+						$emit(
+							'update:value',
+							($event.target as HTMLInputElement).value,
+						)
 				"
 			/>
 			<div>

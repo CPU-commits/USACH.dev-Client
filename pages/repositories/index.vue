@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Repository } from '~~/models/repository/repo.model'
+import type { Repository } from '~~/models/repository/repo.model'
 
 // Nuxtapp
 const { $repoService } = useNuxtApp()

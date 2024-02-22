@@ -1,4 +1,4 @@
-import { Profile } from './profile.model'
+import type { Profile } from './profile.model'
 import { Roles } from './role.model'
 
 export type UserMedia = {

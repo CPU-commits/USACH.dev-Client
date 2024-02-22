@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { SimpleRepository } from '~~/models/repository/repo.model'
-import { SystemFile } from '~~/models/repository/system_file.model'
+import type { SimpleRepository } from '~~/models/repository/repo.model'
+import type { SystemFile } from '~~/models/repository/system_file.model'
 
 // Nuxt app
 const { $repoService } = useNuxtApp()
@@ -86,7 +86,7 @@ async function downloadFolder() {
 					(el) =>
 						folder?.childrens
 							? folder?.childrens?.push(el)
-							: (folder as SystemFile).childrens = [el]
+							: ((folder as SystemFile).childrens = [el])
 				"
 				@delete-element="
 					(idEl) => {

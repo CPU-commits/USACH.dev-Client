@@ -15,7 +15,10 @@ defineEmits<{
 	<article>
 		<label v-if="labelText" class="input__label">{{ labelText }}</label>
 		<select
-			@change="(e) => $emit('update:value', (e.target as HTMLInputElement).value)"
+			@change="
+				(e) =>
+					$emit('update:value', (e.target as HTMLInputElement).value)
+			"
 		>
 			<slot />
 		</select>

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Repository } from '~~/models/repository/repo.model'
+import type { Repository } from '~~/models/repository/repo.model'
 
 // Nuxt app
 const { $repoService, $fetchModule } = useNuxtApp()

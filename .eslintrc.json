@@ -19,12 +19,7 @@
 		"parser": "@typescript-eslint/parser",
 		"sourceType": "module"
 	},
-	"plugins": [
-		"vue",
-		"@typescript-eslint",
-		"prettier",
-		"security-node"
-	],
+	"plugins": ["vue", "@typescript-eslint", "prettier", "security-node"],
 	"rules": {
 		"prettier/prettier": [
 			"error",

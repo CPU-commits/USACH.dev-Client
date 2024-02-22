@@ -23,12 +23,14 @@ import CodeBlockLowLight from '@tiptap/extension-code-block-lowlight'
 import TextStyle from '@tiptap/extension-text-style'
 import { Color } from '@tiptap/extension-color'
 // Modules
-import { lowlight } from 'lowlight'
+import { createLowlight, common } from 'lowlight'
 import { Editor } from '@tiptap/core'
 // Stores
 const toasts = useToastsStore()
 // Fetch module
 const { $fetchModule } = useNuxtApp()
+// Lowlight
+const lowlight = createLowlight(common)
 
 // Props
 const props = withDefaults(

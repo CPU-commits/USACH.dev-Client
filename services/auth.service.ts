@@ -2,8 +2,8 @@
 import { z } from 'zod'
 // Types
 import type { DefaultResponse, Fetch } from '~~/common/fetchModule'
-import { Auth } from '~~/models/auth/auth.model'
-import { BodyFetch } from '~~/models/body.model'
+import type { Auth } from '~~/models/auth/auth.model'
+import type { BodyFetch } from '~~/models/body.model'
 
 export class AuthService {
 	private readonly fetch: Fetch

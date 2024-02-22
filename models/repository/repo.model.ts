@@ -1,6 +1,6 @@
-import { SimpleUser } from '../user/user.model'
-import { LinkRepo } from './link.model'
-import { SystemFile } from './system_file.model'
+import type { SimpleUser } from '../user/user.model'
+import type { LinkRepo } from './link.model'
+import type { SystemFile } from './system_file.model'
 
 export enum RepositoryAccess {
 	'public',

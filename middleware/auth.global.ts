@@ -1,4 +1,4 @@
-import { Auth } from 'models/auth/auth.model'
+import type { Auth } from '@/models/auth/auth.model'
 
 export default defineNuxtRouteMiddleware(async (_to, from) => {
 	if (useError().value) {

@@ -3,10 +3,13 @@ import { z } from 'zod'
 // Types
 import { FilesService } from './files.service'
 import type { DefaultResponse, Fetch } from '~~/common/fetchModule'
-import { BodyFetch } from '~~/models/body.model'
-import { Repository, SimpleRepository } from '~~/models/repository/repo.model'
-import { SystemFile } from '~~/models/repository/system_file.model'
-import { Like } from '~~/models/repository/like.model'
+import type { BlobFetch, BodyFetch } from '~~/models/body.model'
+import type {
+	Repository,
+	SimpleRepository,
+} from '~~/models/repository/repo.model'
+import type { SystemFile } from '~~/models/repository/system_file.model'
+import type { Like } from '~~/models/repository/like.model'
 
 export class RepoSerivce {
 	private readonly fetch: Fetch
@@ -205,18 +208,21 @@ export class RepoSerivce {
 	}
 
 	async download(idRepository: string, idElement?: string) {
-		const res = (await this.fetch.fetchData({
+		const res = await this.fetch.fetchData<BlobFetch>({
 			method: 'get',
 			URL: `/api/v1/repository/download/${idRepository}${
 				idElement ? `?child=${idElement}` : ''
 			}`,
 			token: this.authStore.getToken,
 			responseType: 'blob',
-		})) as BlobPart
+		})
 
 		this.filesService.downloadFileUrl(
-			this.filesService.blobPartToUrl(res, 'application/octet-stream'),
-			'filename.zip',
+			this.filesService.blobPartToUrl(
+				res.file,
+				res.headers.get('Content-Type') ?? '',
+			),
+			res.headers.get('Content-Disposition')?.split("'").at(1) ?? '',
 		)
 	}
 

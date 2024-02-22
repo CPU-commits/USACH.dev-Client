@@ -1,4 +1,4 @@
-import { UserMedia } from './user.model'
+import type { UserMedia } from './user.model'
 
 export type Profile = {
 	description?: string

@@ -1,7 +1,7 @@
 import { z } from 'zod'
-import { DefaultResponse, Fetch } from '~~/common/fetchModule'
-import { BodyFetch } from '~~/models/body.model'
-import { Discussion } from '~~/models/dicussion/discussion'
+import type { DefaultResponse, Fetch } from '~~/common/fetchModule'
+import type { BodyFetch } from '~~/models/body.model'
+import type { Discussion } from '~~/models/dicussion/discussion'
 
 export class DiscussionService {
 	private readonly fetch: Fetch

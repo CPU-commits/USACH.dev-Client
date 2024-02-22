@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { Auth } from '~~/models/auth/auth.model'
+import type { Auth } from '~~/models/auth/auth.model'
 import { Roles } from '~~/models/user/role.model'
 
 type KeysUserTypes = keyof typeof Roles

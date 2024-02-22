@@ -1,5 +1,5 @@
 import { COOKIE_SESSION } from '~/common/cookies'
-import { Session } from '~/models/session/session'
+import type { Session } from '~/models/session/session'
 
 export default defineEventHandler(async (event): Promise<Session | null> => {
 	const cookieSession = getCookie(event, COOKIE_SESSION)

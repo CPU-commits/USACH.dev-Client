@@ -1,7 +1,4 @@
 <script setup lang="ts">
-// Types
-import { Ref } from 'vue'
-
 const props = defineProps<{
 	opened: boolean
 

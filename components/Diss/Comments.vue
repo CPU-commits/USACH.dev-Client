@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 // Socket IO
 import { Socket, io } from 'socket.io-client'
-import { Comment } from 'models/comments/comment.model'
-import { User } from 'models/user/user.model'
+import type { Comment } from '@/models/comments/comment.model'
+import type { User } from '@/models/user/user.model'
 
 const props = defineProps<{
 	idDiscussion: string

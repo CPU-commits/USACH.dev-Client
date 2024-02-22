@@ -146,6 +146,14 @@ export class Fetch {
 				// Log response
 				console.log('[fetch response error]', request, response.body)
 			},
+			onResponse({ response }) {
+				if (response._data instanceof Blob) {
+					response._data = {
+						file: response._data,
+						headers: response.headers,
+					}
+				}
+			},
 			mode: 'cors',
 		})
 	}
@@ -162,9 +170,7 @@ export class Fetch {
 		this.currentFetch.get(key)?.splice(index ?? 0, 1)
 	}
 
-	async fetchData<T extends DefaultResponse>(
-		config: ConfigFetch,
-	): Promise<T> {
+	async fetchData<T = DefaultResponse>(config: ConfigFetch): Promise<T> {
 		const key = config.URL.split('?')[0]
 		// Abort all fetchs
 		const abortKey = config.abort?.url === 'same' ? key : config.abort?.url

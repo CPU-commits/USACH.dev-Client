@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Discussion } from 'models/dicussion/discussion'
+import type { Discussion } from '@/models/dicussion/discussion'
 
 // Nuxtapp
 const { $discussionService } = useNuxtApp()

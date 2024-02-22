@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 // Types
-import { Repository } from '~~/models/repository/repo.model'
-import { Discussion } from '~~/models/dicussion/discussion'
+import type { Repository } from '~~/models/repository/repo.model'
+import type { Discussion } from '~~/models/dicussion/discussion'
 
 // Nuxt app
 const { $repoService, $discussionService } = useNuxtApp()

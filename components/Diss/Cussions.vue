@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 // Models
-import { Discussion } from '~~/models/dicussion/discussion'
+import type { Discussion } from '@/models/dicussion/discussion'
 
 const props = defineProps<{
 	discussions: Array<Omit<Discussion, 'text'>>

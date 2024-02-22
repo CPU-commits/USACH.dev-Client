@@ -1,4 +1,4 @@
-import { Session } from '~/models/session/session'
+import type { Session } from '~/models/session/session'
 
 async function useSession<T>() {
 	const session = ref<Session<T> | null>(null)

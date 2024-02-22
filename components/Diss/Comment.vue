@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { Comment } from 'models/comments/comment.model'
+// Types
+import type { Comment } from '@/models/comments/comment.model'
 
 const props = defineProps<{
 	comment: Comment

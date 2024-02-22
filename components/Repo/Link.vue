@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { LinkRepo } from '~~/models/repository/link.model'
+import type { LinkRepo } from '~~/models/repository/link.model'
 
 defineProps<{
 	link: LinkRepo
