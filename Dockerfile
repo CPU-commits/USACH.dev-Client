@@ -1,5 +1,5 @@
 # STAGE 0 -> Builder
-FROM node:16.18.1-alpine3.16 as installer
+FROM node:20.11.0-alpine3.19 as installer
 
 WORKDIR /app
 
@@ -7,7 +7,7 @@ COPY package*.json ./
 
 RUN npm install
 # STAGE 1 -> Nuxt build
-FROM node:16.18.1-alpine3.16 as builder
+FROM node:20.11.0-alpine3.19 as builder
 
 WORKDIR /app
 
@@ -20,7 +20,7 @@ ENV IS_BUILDING=building
 RUN npx nuxi build
 
 # STAGE 2 -> Nuxt entrypoint
-FROM node:16.18.1-alpine3.16
+FROM node:20.11.0-alpine3.19
 
 WORKDIR /app
 
